@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mother's Day ❤️</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+      padding:20px;
+    }
+
+    .card{
+      width:400px;
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1{
+      color:#ff4d6d;
+      margin-bottom:20px;
+    }
+
+    p{
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    button{
+      padding:12px 22px;
+      border:none;
+      border-radius:50px;
+      background:#ff4d6d;
+      color:white;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#e63956;
+    }
+
+    #message{
+      margin-top:25px;
+      font-size:22px;
+      color:#d6336c;
+      font-weight:bold;
+      opacity:0;
+      transition:0.5s;
+    }
+
+    .show{
+      opacity:1 !important;
+    }
+
+    /* SLIDER */
+
+    .slider{
+      margin-top:35px;
+      position:relative;
+    }
+
+    .slider img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.5);
+      color:white;
+      border:none;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      font-size:20px;
+      cursor:pointer;
+    }
+
+    .left{
+      left:10px;
+    }
+
+    .right{
+      right:10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>❤️ Happy Mother's Day Une❤️</h1>
+
+    <button onclick="showLove()">Open Message</button>
+
+    <div id="message"></div>
+
+    <!-- PHOTO SLIDER -->
+    <div class="slider">
+
+      <button class="arrow left" onclick="prevSlide()">❮</button>
+
+      <img id="sliderImage" src="photo1.jpeg" alt="photo">
+
+      <button class="arrow right" onclick="nextSlide()">❯</button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function showLove(){
+
+      const message = document.getElementById("message");
+
+      message.innerHTML =
+      "Happy Mother's Day sa akong gwapang asawa.<br>Salamat kaayo sa imong pagmahal sa amoa. We love you(with Zeal)";
+
+      message.classList.add("show");
+    }
+
+    // YOUR PHOTOS
+    const photos = [
+      "photo1.jpeg",
+      "photo2.jpeg",
+      "photo3.jpeg",
+      'photo4.jpeg', 
+      'photo5.jpeg', 
+      'photo6.jpeg', 
+      'photo7.jpeg', 
+      'photo8.jpeg', 
+      'photo9.jpeg', 
+      'photo10.jpeg', 
+      'photo11.jpeg', 
+      'photo12.jpeg', 
+      'photo13.jpeg', 
+      'photo14.jpeg', 
+      'photo15.jpeg', 
+      'photo16.jpeg', 
+      'photo17.jpeg', 
+      'photo18.jpeg', 
+      'photo19.jpeg',
+      'photo20.jpeg'
+    ];
+
+    let current = 0;
+
+    function showSlide(){
+      document.getElementById("sliderImage").src = photos[current];
+    }
+
+    function nextSlide(){
+      current++;
+
+      if(current >= photos.length){
+        current = 0;
+      }
+
+      showSlide();
+    }
+
+    function prevSlide(){
+      current--;
+
+      if(current < 0){
+        current = photos.length - 1;
+      }
+
+      showSlide();
+    }
+
+  </script>
+
+</body>
+</html>
